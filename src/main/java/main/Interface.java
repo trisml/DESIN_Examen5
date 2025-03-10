@@ -1,43 +1,31 @@
 package main;
 
+import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class Interface {
+    public static void main(String[] args) {
+    	
+        JFrame frame = new JFrame("Mi Interfaz");
+        frame.setSize(400, 200);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10)); 
 
-	private JFrame frame;
+        JLabel mensaje = new JLabel("Bienvenido Diego");
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Interface window = new Interface();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+        JButton boton = new JButton("Pulsa aquí");
+        boton.setPreferredSize(new Dimension(120, 40)); 
 
-	/**
-	 * Create the application.
-	 */
-	public Interface() {
-		initialize();
-	}
+      
+        frame.add(mensaje);
+        frame.add(boton);
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize() {
-		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
-
+       
+        frame.setVisible(true);
+    }
 }
